@@ -1,11 +1,23 @@
 from bank import Details
+import controller as c
 
-num = int(input("Enter the number of data to enter:"))
-for i in range(num):
-    p = Details(id = 0,name="", phone="", balance=0)
-    p.id = int(input("Enter Id:"))
-    p.name = input(f"Enter User {i+1} name:")
-    p.phone= input(f"Enter the phone:")
-    p.balance = float(input(f"Enter the balance:"))
-    p.store()
-print("Successfully Stored")
+query = """
+What do you want to do?
+1. Add User
+2. View All Data
+3. View User By Name
+4. View User By Id
+5. Update User
+6. Delete User
+(Your Query):"""
+option = int(input(query))
+
+if option == 1:
+    c.add_customer()
+    print("Successfully Stored")
+elif option == 2:
+    c.view_all_customers()
+elif option == 3:
+    c.show_one_customer()
+elif option == 4:
+    c.view_customer_by_id()

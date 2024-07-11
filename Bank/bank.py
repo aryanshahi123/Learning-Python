@@ -7,5 +7,9 @@ class Details:
     
     def store(self):
         f = open("mainDataFile.csv", 'a')
-        f.write(f"User Id: {self.id}\nUserName: {self.name}\nPhone: {self.phone}\nBalance: {self.balance}\n----------------------\n")
+        f.write(f"{self.id},{self.name},{self.phone},{self.balance}\n")
         f.close()
+
+    def display(self):
+        f = open("mainDataFile.csv", 'r')
+        print(f"ID: {self.id}\nName: {self.name}\nPhone: {self.phone}\nBalance: {self.balance}")
