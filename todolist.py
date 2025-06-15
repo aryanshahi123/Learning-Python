@@ -7,5 +7,3 @@ for i in range(0, total_todo):
 
 for todo in todos:
     print(todo)
-
-print("Okay")!
